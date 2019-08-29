@@ -19,9 +19,9 @@ class RokaeRbtHandler(socketserver.BaseRequestHandler):
             return
         while conn:
             time.sleep(0.1)
-            for i in range(l):
+            for i in range(l):   #取state_req指令队列长度
                 try:
-                    self.request.sendall(state_req[i])  
+                    self.request.sendall(state_req[i])  #逐条发送
                     a = self.request.recv(1024)   #recv message
                     #print(a)
                 except ConnectionError:
