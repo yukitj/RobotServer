@@ -21,7 +21,7 @@ class RokaeRbtHandler(socketserver.BaseRequestHandler):
             time.sleep(0.1)
             for i in range(l):
                 try:
-                    self.request.sendall(state_req[i])  #send request
+                    self.request.sendall(state_req[i])  
                     a = self.request.recv(1024)   #recv message
                     #print(a)
                 except ConnectionError:
