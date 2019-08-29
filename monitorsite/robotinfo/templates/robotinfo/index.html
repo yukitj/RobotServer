@@ -1,0 +1,27 @@
+<meta http-equiv="refresh" content="5">  // autorefresh 4 sec
+<script language="JavaScript">
+    function myrefresh() {
+    window.location.reload();
+}
+setInterval('myrefresh()',4000);  //autorefresh 4 sec
+</script>
+{% if info_dict %}
+    <ul>
+    {% for k, v in info_dict.items %}
+        <li>机器人位置：{{k}}
+        <ul>
+            <li>空间位置： {{v.0}}</li>
+            <li>关节位置： {{v.1}}</li>
+            <li>关节速度： {{v.2}}</li>
+            <li>关节力矩： {{v.3}}</li>
+            <li>报警信息： {{v.4}}</li>
+            <li>机器人状态： {{v.5}}</li>
+            <li>是否运行： {{v.6}}</li>
+        </ul>
+
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Robot connected.</p>
+{% endif %}
