@@ -10,3 +10,4 @@ class ytrbts(models.Model): #数据库新建ytrbts表，字段如下
     alarm_info = models.CharField('报警信息',max_length=10)
     state = models.CharField('机器人状态',max_length=10)
     running_state = models.CharField('是否运行',max_length=10)
+    time = models.DateTimeField('时间',auto_now_add=True)

@@ -23,7 +23,6 @@ class RokaeRbtHandler(socketserver.BaseRequestHandler):
                 try:
                     self.request.sendall(state_req[i])  #逐条发送
                     a = self.request.recv(1024)   #recv message
-                    #print(a)
                 except ConnectionError:
                     conn = False
                     break
